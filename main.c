@@ -82,7 +82,7 @@ int main() {
         } else {
             Account* a = NULL;
             for (int i = 0; i < ac; i++) if (accounts[i].user_id == uid) { a = &accounts[i]; break; }
-            printf("\nСметка: %s | Баланс: %.2f лв.\n", a->number, a->balance);
+            printf("\nСметка: %s | Баланс: %.2f €.\n", a->number, a->balance);
             printf("1. Депозит  2. Теглене  3. Трансфер  4. Транзакции  0. Логаут\n> ");
             scanf(" %d", &choice);
             if (choice == 1)      { deposit(accounts, ac, uid); save_accounts(); }
