@@ -22,7 +22,7 @@ void deposit(Account* accounts, int n, int user_id) {
     scanf(" %lf", &amount);
     if (amount <= 0) { printf("Невалидна сума.\n"); return; }
     a->balance += amount;
-    printf("Депозирано %.2f лв. Баланс: %.2f лв.\n", amount, a->balance);
+    printf("Депозирано %.2f €. Баланс: %.2f €.\n", amount, a->balance);
 }
 
 void withdraw(Account* accounts, int n, int user_id) {
@@ -34,7 +34,7 @@ void withdraw(Account* accounts, int n, int user_id) {
     if (amount <= 0) { printf("Невалидна сума.\n"); return; }
     if (amount > a->balance) { printf("Недостатъчен баланс.\n"); return; }
     a->balance -= amount;
-    printf("Изтеглено %.2f лв. Баланс: %.2f лв.\n", amount, a->balance);
+    printf("Изтеглено %.2f €. Баланс: %.2f €.\n", amount, a->balance);
 }
 
 void transfer(Account* accounts, int n, int user_id, Transaction* queue, int* qc) {
@@ -68,7 +68,7 @@ void process_transactions(Account* accounts, int n, Transaction* queue, int* qc)
         }
         from->balance -= queue[i].amount;
         to->balance += queue[i].amount;
-        printf("Прехвърлено %.2f лв.: %s -> %s\n", queue[i].amount, queue[i].from, queue[i].to);
+        printf("Прехвърлено %.2f €.: %s -> %s\n", queue[i].amount, queue[i].from, queue[i].to);
     }
     *qc = 0;
 }
